@@ -1,21 +1,56 @@
 @import url("reset.css");
-/* This is a custom font from google fonts */
-@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+
+/* === Custom Fonts === */
+@font-face {
+  font-family: "TheBasics";
+  src: url("/fonts/TheBasics-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "TheBasics";
+  src: url("/fonts/TheBasics-Medium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "TheBasics";
+  src: url("/fonts/TheBasics-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Tamlil";
+  src: url("/fonts/FbTamlil-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+}
 
 /* what is :root? https://developer.mozilla.org/en-US/docs/Web/CSS/:root */
 :root {
-  /* Define design variables */
-  --color-primary: #2b2d42;
-  --color-secondary: #bfc6d2;
-  --color-background: #f5f5f5;
-  --color-accent: #535bf2;
+  /* פלטת הצבעים שלך */
+  --color-orange: #eb7e3c;
+  --color-white: #ffffff;
+  --color-green: #507120;
+  --color-lime: #d7f076;
+  --color-green-dark: #253229;
+
+  /* צבעים כלליים למרכיבים ישנים */
+  --color-primary: var(--color-green-dark);
+  --color-secondary: #d0d4c8;
+  --color-background: var(--color-white);
+  --color-accent: var(--color-orange);
 
   --border-radius: 0.5rem;
 
-  --font-titles: "Rubik", serif;
-  --font-body: system-ui, sans-serif; /* system-ui matches the user's system font */
+  --font-titles: "Tamlil", "TheBasics", system-ui, sans-serif;
+  --font-body: "TheBasics", system-ui, sans-serif;
 }
 
+/* בסיס כללי לכל האתר */
 body {
   color: var(--color-primary);
   background-color: var(--color-background);
@@ -31,31 +66,44 @@ main {
 
 header {
   padding: 1rem 2rem;
-  background-color: var(--color-primary);
+  background-color: var(--color-green-dark);
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   flex-direction: row;
   align-items: center;
+  color: var(--color-white);
+  direction: rtl;
+}
 
-  a {
-    text-decoration: none;
-    color: var(--color-background);
+header nav {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
 
-    &:hover {
-      text-decoration: underline;
-    }
-  }
+header a {
+  text-decoration: none;
+  color: var(--color-lime);
+  font-family: var(--font-titles);
+  font-size: 0.95rem;
 
-  h1 {
-    margin: 0;
-  }
-
-  nav {
-    display: flex;
-    flex-direction: row;
-    gap: 1rem;
+  &:hover {
+    text-decoration: underline;
   }
 }
+
+/* התאמה למובייל – navbar יורד לשורה אחת מעל השנייה אם צפוף */
+@media (max-width: 600px) {
+  header {
+    justify-content: center;
+  }
+
+  header nav {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
 
 footer {
   padding: 1rem;
@@ -63,6 +111,7 @@ footer {
   text-align: center;
 }
 
+/* לתוכן בעברית שצריך RTL */
 .rtl {
   direction: rtl;
 }
@@ -90,7 +139,6 @@ h6 {
   margin-top: 1rem;
   font-family: var(--font-titles);
   font-weight: 500;
-  font-optical-sizing: auto;
 }
 
 h1 {
@@ -151,6 +199,7 @@ select {
   padding: 0.2em 0.5em;
   border: 1px solid var(--color-secondary);
   border-radius: var(--border-radius);
+  font-family: var(--font-body);
 }
 
 fieldset {
@@ -158,8 +207,9 @@ fieldset {
   border: 1px solid var(--color-secondary);
 }
 
+/* כפתור דוגמה מהסטארטר – שינינו לצבעים שלך */
 .counter-button {
-  background-color: var(--color-accent);
+  background-color: var(--color-orange);
   width: 2rem;
   height: 2rem;
   color: white;

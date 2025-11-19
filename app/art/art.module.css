@@ -1,0 +1,173 @@
+.page {
+  min-height: 100vh;
+  padding: 2.5rem 1.5rem 3rem;
+  max-width: 70rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  direction: rtl;
+}
+
+/* כותרת העמוד */
+.header {
+  text-align: right;
+  background-color: #f6f8ef;
+  border-radius: 20px;
+  padding: 1.5rem 1.8rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+}
+
+.badge {
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-green);
+  margin: 0 0 0.4rem;
+}
+
+.title {
+  margin: 0;
+  font-size: 1.7rem;
+}
+
+.subtitle {
+  margin: 0.4rem 0;
+  font-weight: 500;
+}
+
+.helper {
+  margin: 0.4rem 0 0.8rem;
+  font-size: 0.9rem;
+}
+
+.reloadButton {
+  margin-top: 0.5rem;
+  padding: 0.45rem 1.3rem;
+  border-radius: 999px;
+  border: none;
+  background-color: var(--color-orange);
+  color: var(--color-white);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(235, 126, 60, 0.4);
+  transition: transform 0.1s ease, box-shadow 0.1s ease, background 0.15s;
+}
+
+.reloadButton:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(235, 126, 60, 0.5);
+  background-color: #d46f33;
+}
+
+.reloadButton:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+/* הודעות מצב */
+.info {
+  text-align: right;
+  font-size: 0.95rem;
+}
+
+.errorBox {
+  background-color: #fff2f0;
+  border-radius: 16px;
+  padding: 1rem 1.3rem;
+  border: 1px solid #f5b2a2;
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  max-width: 30rem;
+}
+
+.errorButton {
+  align-self: flex-start;
+  padding: 0.4rem 1.1rem;
+  border-radius: 999px;
+  border: none;
+  background-color: var(--color-orange);
+  color: var(--color-white);
+  cursor: pointer;
+}
+
+/* גריד של כרטיסי יצירות */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  background-color: var(--color-white);
+  border-radius: 20px;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.imageWrapper {
+  background-color: #f0f2e5;
+  max-height: 220px;
+  overflow: hidden;
+}
+
+.image {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+}
+
+.cardBody {
+  padding: 1rem 1.2rem 1.2rem;
+  text-align: right;
+}
+
+.cardTitle {
+  font-size: 1rem;
+  margin: 0 0 0.4rem;
+}
+
+.cardArtist {
+  margin: 0 0 0.8rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--color-green);
+}
+
+/* meta information */
+.metaList {
+  margin: 0;
+  font-size: 0.82rem;
+}
+
+.metaList div {
+  display: flex;
+  gap: 0.3rem;
+}
+
+.metaList dt {
+  font-weight: 600;
+}
+
+.metaList dd {
+  margin: 0;
+}
+
+/* מובייל */
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

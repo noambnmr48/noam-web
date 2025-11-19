@@ -1,0 +1,367 @@
+/* === פונטים === */
+@font-face {
+  font-family: "TheBasics";
+  src: url("/fonts/TheBasics-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "TheBasics";
+  src: url("/fonts/TheBasics-Medium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "TheBasics";
+  src: url("/fonts/TheBasics-Bold.otf") format("opentype");
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Fb Tamlil";
+  src: url("/fonts/FbTamlil-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* === מבנה כללי של העמוד === */
+
+.page {
+  display: flex;
+  justify-content: center;
+  background: #ffffff;
+  min-height: 100vh;
+}
+
+.screen {
+  width: 100%;
+  max-width: 440px;    /* עדיין נשמר ה־frame של 440 בדסקטופ */
+  margin: 0 auto;      /* מרכז את הבלוק במסך רחב */
+  min-height: 1212px;
+  padding-top: 0;
+  background: #253229;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+
+/* כל סקשן ברוחב מלא של הפריים וללא מרג'ינים */
+.screen > section {
+  width: 100%;
+  margin: 0;
+}
+
+
+/* HERO */
+
+.heroSection {
+  position: relative;
+  width: 100%;
+  height: 270px;          /* 40px טופ + 170px גובה הכרטיסים */
+  display: flex;               /* חדש */
+  justify-content: center;
+  margin-bottom: 0;
+}
+
+/* בלוק ירוק-ליים אחורי */
+.heroBackCard {
+  position: absolute;
+  top: 40px;
+  left: 16px;             /* מרווח קטן מהשוליים השמאליים */
+  width: 408px;           /* כמעט כל הרוחב, משאיר 16px מימין */
+  height: 230px;
+  background: #d7f076;
+  border-radius: 24px 24px 0 0;
+  box-sizing: border-box;
+}
+
+/* תאריך בתחתית הבלוק הירוק */
+.heroDate {
+  position: absolute;
+  bottom: 14px;
+  left: 32px;
+  font-family: "TheBasics";
+  font-size: 8px;
+  font-weight: 400;
+  line-height: 9px;
+  color: #253229;
+}
+
+/* הבלוק הלבן הקדמי */
+.heroMainCard {
+  position: absolute;
+  top: 40px;
+  left: 88px;            /* לבן מתחיל יותר ימינה, כך שנשאר ליים בצד שמאל */
+  width: 335px;          /* 88 + 352 = 440 → נוגע בשול הימני */
+  height: 230px;
+  background: #ffffff;
+  border-radius: 24px 24px 0 0;
+  padding: 16px 24px 18px;
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+}
+
+
+/* טקסט קטן למעלה */
+.heroMeta {
+  align-self: stretch;
+  text-align: right;
+  font-family: "TheBasics";
+  font-size: 8px;
+  font-weight: 400;
+  line-height: 9px;
+  color: #253229;
+  margin-bottom: auto; /* דוחף את הכותרת למטה */
+}
+
+/* כותרת ראשית */
+.heroTitle {
+  align-self: stretch;
+  text-align: right;
+  font-family: "Fb Tamlil";
+  font-size: 24px;
+  font-weight: 700;
+  line-height: normal;
+  color: #253229;
+}
+
+/* תת-כותרת */
+.heroSubtitle {
+  align-self: stretch;
+  text-align: right;
+  font-family: "TheBasics";
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 12px;
+  color: #253229;
+}
+
+/* בלוק כתום למעלה */
+
+.orangeIntroSection {
+  background: #eb7e3c;
+  padding: 24px 20px 32px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 0;
+}
+
+/* כותרת עליונה בכתום */
+.orangeIntroLabel {
+   width: 100%;                 /* במקום 273px */
+  text-align: right;
+  font-family: "TheBasics";
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 12px;
+  margin: 0 0 4px;
+  color: #253229;
+}
+
+/* טקסט ציטוט */
+.orangeIntroText {
+  margin: 0;
+  align-self: stretch;
+  text-align: right;
+  font-family: "Fb Tamlil";
+  font-size: 21px;
+  font-weight: 700;
+  line-height: 24px;
+  color: #d7f076;
+  padding: 20px;
+}
+
+/* מטרות */
+
+.targetsSection {
+  background: #ffffff;
+  padding: 24px 32px 0px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* כותרת משנה כהה (טקסט שחור על רקע בהיר) */
+.sectionSubtitleDark {
+   width: 100%;                 /* במקום 273px */
+  text-align: right;
+  font-family: "TheBasics";
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 12px;
+  margin: 0 0 4px;
+  color: #253229;
+}
+
+/* שתי מטרות בשורה */
+.targetsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+/* כרטיס מטרה */
+.targetCard {
+  background: #d7f076;
+  border-radius: 16px 16px 0 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 180px;
+}
+
+/* מעטפת לתמונה (יחס של כרטיס) */
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  height: 130px;
+  overflow: hidden;
+}
+
+.cardImage {
+  object-fit: cover;
+}
+
+/* טקסט מטרה */
+.targetText {
+  padding: 8px 10px 10px;
+  font-family: "TheBasics";
+  font-size: 8px;
+  font-weight: 400;
+  line-height: 9px;
+  text-align: right;
+  color: #253229;
+}
+
+/* קהל יעד */
+
+.audienceSection {
+  background: #253229;
+  padding: 24px 32px 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* כותרת משנה בהירה (על רקע כהה) */
+.sectionSubtitleLight {
+   width: 100%;                 /* במקום 273px */
+  text-align: right;
+  font-family: "TheBasics";
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 12px;
+  margin: 0 0 4px;
+  color: #ffffff;
+}
+
+.audienceCard {
+  background: #ffffff;
+  border-radius: 16px 16px 0 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+/* גובה קצת יותר גבוה למעטפת התמונה בקהל יעד */
+.audienceCard .imageWrapper {
+  height: 150px;              /* אפשר לשחק עם המספר */
+}
+
+/* למקד את החיתוך בחלק העליון של התמונה */
+.audienceCard .cardImage {
+  object-position: top;
+}
+
+
+/* טקסט מתחת לתמונה */
+.audienceText {
+  padding: 12px 16px 14px;
+  font-family: "TheBasics";
+  font-size: 8px;
+  font-weight: 400;
+  line-height: 9px;
+  text-align: right;
+  color: #253229;
+}
+
+/* קונטקסט שימוש */
+
+.contextSection {
+  background: #eb7e3c;
+  padding: 24px 32px 0px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.contextGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.contextCard {
+  background: #ffffff;
+  border-radius: 16px 16px 0 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* טקסט מתחת לתמונות קונטקסט */
+.contextText {
+  padding: 8px 10px 10px;
+  font-family: "TheBasics";
+  font-size: 8px;
+  font-weight: 400;
+  line-height: 9px;
+  text-align: right;
+  color: #253229;
+}
+
+@media (max-width: 480px) {
+
+  .heroSection {
+    height: 280px;
+    padding: 0 8px;        /* רווח צדדים */
+    box-sizing: border-box;
+    position: relative;    /* חשוב */
+  }
+
+  .heroBackCard {
+    top: 40px;
+    left: 20px;             /* ❗ במקום 0 — עכשיו מכבד את הרווח */
+    width: calc(65% - 8px);/* מפצה על ה-left החדש */
+    height: 240px;
+  }
+
+  .heroMainCard {
+    top: 40px;
+    left: calc(24% + 8px); /* גם כאן מוסיפים את הרווח */
+    width: calc(70% - 8px);
+    height: 240px;
+  }
+
+  .heroDate {
+    left: 20px;            /* נכנס למיקום יפה */
+  }
+}
+
+
+
+
+
+

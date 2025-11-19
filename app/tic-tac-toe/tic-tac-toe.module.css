@@ -1,0 +1,125 @@
+.page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 2.5rem 1.5rem;
+  background: linear-gradient(
+    180deg,
+    var(--color-lime) 0%,
+    var(--color-lime) 40%,
+    var(--color-white) 40%,
+    var(--color-white) 100%
+  );
+}
+
+/* כרטיס ראשי כמו בעיצוב */
+.card {
+  width: 100%;
+  max-width: 430px;
+  background-color: var(--color-green-dark);
+  color: var(--color-white);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-soft);
+  padding: 1.8rem 2rem 2.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  text-align: right;
+}
+
+.badge {
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  opacity: 0.7;
+  margin: 0;
+}
+
+.title {
+  font-size: 1.9rem;
+  margin: 0;
+  line-height: 1.1;
+}
+
+.status {
+  align-self: center;
+  background-color: var(--color-orange);
+  color: var(--color-white);
+  padding: 0.4rem 1.4rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+/* אזור הלוח */
+.boardWrapper {
+  background-color: var(--color-white);
+  border-radius: 20px;
+  padding: 1.2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 72px);
+  grid-template-rows: repeat(3, 72px);
+  gap: 10px;
+}
+
+.square {
+  width: 72px;
+  height: 72px;
+  font-size: 2rem;
+  font-weight: 700;
+  border-radius: 18px;
+  border: 2px solid var(--color-lime);
+  background: #f8fbf0;
+  color: var(--color-green-dark);
+  cursor: pointer;
+  transition: transform 0.1s ease, box-shadow 0.1s ease, background 0.15s;
+}
+
+.square:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+  background: #ffffff;
+}
+
+.square:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+.resetButton {
+  align-self: center;
+  margin-top: 0.3rem;
+  padding: 0.5rem 1.6rem;
+  border-radius: 999px;
+  border: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  background-color: var(--color-orange);
+  color: var(--color-white);
+  box-shadow: 0 4px 12px rgba(235, 126, 60, 0.4);
+  transition: transform 0.1s ease, box-shadow 0.1s ease, background 0.15s;
+}
+
+.resetButton:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(235, 126, 60, 0.5);
+  background-color: #d46f33;
+}
+
+.resetButton:active {
+  transform: translateY(0);
+  box-shadow: none;
+}

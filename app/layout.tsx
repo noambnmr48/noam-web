@@ -1,42 +1,34 @@
-import "@/styles/global.css";
-
 import type { Metadata } from "next";
-import type { ReactNode } from "react";
-import Navbar from "@/lib/components/Navbar";
-import Footer from "@/lib/components/Footer";
+import "./../styles/global.css";
+import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Digital Product Jam Starter Kit",
-  description:
-    "A starter kit for wiritng code in the Digital Product Jam course.",
+  title: "Product Jam Web App",
+  description: "Starter kit for Noam's assignment",
 };
 
-export default function RootLayout({ children }: { children: ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
-    <html>
-      <head>
-        {/* Browser Favicon */}
-        <link rel="icon" href="/icons/favicon.png" />
-        {/* Apple Icon */}
-        <link
-          rel="apple-touch-icon"
-          sizes="180x180"
-          href="/icons/icon-180.png"
-        />
-        {/* Android Icon */}
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="192x192"
-          href="/icons/icon-192.png"
-        />
-        <link rel="manifest" href="/manifest.json" />
-        <script src="https://accounts.google.com/gsi/client" async></script>
-      </head>
+    <html lang="he" dir="rtl">
       <body>
-        <Navbar />
-        <div>{children}</div>
-        <Footer />
+        <header>
+          <nav>
+            <Link href="/">בית</Link>
+            <Link href="/tic-tac-toe">איקס־עיגול</Link>
+            <Link href="/art">גלריית אמנות</Link>
+            <Link href="/design">חשבונית</Link>
+          </nav>
+        </header>
+
+        {children}
+
+        <footer>
+          <p>noam-web@</p>
+        </footer>
       </body>
     </html>
   );

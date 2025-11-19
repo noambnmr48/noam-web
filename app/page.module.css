@@ -1,0 +1,98 @@
+.main {
+  min-height: 100vh;
+  padding-block: 3rem;
+  display: flex;
+  justify-content: center;
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 60rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  direction: rtl; /* כל העמוד מימין לשמאל */
+}
+
+/* טקסט פתיחה קצר מעל הכרטיסים */
+.intro {
+  text-align: right;
+  font-size: 0.95rem;
+  color: var(--color-green-dark);
+  background-color: #f6f8ef;
+  border-radius: 16px;
+  padding: 1rem 1.5rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+}
+
+/* כרטיסים של שלבי המטלה */
+.sections {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+  direction: rtl; /* כרטיס 1 יופיע מימין, אחריו 2 ואז 3 */
+}
+
+.card {
+  background-color: var(--color-white);
+  border-radius: 20px;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
+  padding: 1.4rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  text-align: right;
+}
+
+.cardLabel {
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-green);
+}
+
+.cardTitle {
+  font-family: var(--font-titles);
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.cardText {
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.cardLink {
+  margin-top: auto;
+  align-self: flex-start;
+  margin-top: 0.8rem;
+  padding: 0.45rem 1.2rem;
+  border-radius: 999px;
+  border: none;
+  background-color: var(--color-orange);
+  color: var(--color-white);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(235, 126, 60, 0.4);
+  transition: transform 0.1s ease, box-shadow 0.1s ease, background 0.15s;
+}
+
+.cardLink:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(235, 126, 60, 0.5);
+  background-color: #d46f33;
+}
+
+.cardLink:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+/* התאמה למסכים קטנים */
+@media (max-width: 900px) {
+  .sections {
+    grid-template-columns: 1fr;
+  }
+}
