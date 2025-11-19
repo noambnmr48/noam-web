@@ -24,7 +24,7 @@ type Department = {
  * מביאה מערך של יצירות אמנות מתוך מחלקה מסוימת במוזיאון,
  * בגודל count, בצורה רנדומלית.
  */
-export async function getArtData(
+async function getArtData(
   departmentId: string,
   count: number
 ): Promise<ArtItem[]> {

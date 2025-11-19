@@ -204,14 +204,12 @@
   color: #253229;
 }
 
-/* שתי מטרות בשורה */
 .targetsGrid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 16px;
 }
 
-/* כרטיס מטרה */
 .targetCard {
   background: #d7f076;
   border-radius: 16px 16px 0 0;
@@ -221,7 +219,6 @@
   min-height: 180px;
 }
 
-/* מעטפת לתמונה (יחס של כרטיס) */
 .imageWrapper {
   position: relative;
   width: 100%;
@@ -233,7 +230,6 @@
   object-fit: cover;
 }
 
-/* טקסט מטרה */
 .targetText {
   padding: 8px 10px 10px;
   font-family: "TheBasics";
@@ -244,7 +240,6 @@
   color: #253229;
 }
 
-/* קהל יעד */
 
 .audienceSection {
   background: #253229;
@@ -255,9 +250,8 @@
   gap: 16px;
 }
 
-/* כותרת משנה בהירה (על רקע כהה) */
 .sectionSubtitleLight {
-   width: 100%;                 /* במקום 273px */
+   width: 100%;                 
   text-align: right;
   font-family: "TheBasics";
   font-size: 13px;
@@ -274,18 +268,15 @@
   display: flex;
   flex-direction: column;
 }
-/* גובה קצת יותר גבוה למעטפת התמונה בקהל יעד */
 .audienceCard .imageWrapper {
-  height: 150px;              /* אפשר לשחק עם המספר */
+  height: 150px;              
 }
 
-/* למקד את החיתוך בחלק העליון של התמונה */
 .audienceCard .cardImage {
   object-position: top;
 }
 
 
-/* טקסט מתחת לתמונה */
 .audienceText {
   padding: 12px 16px 14px;
   font-family: "TheBasics";
@@ -296,7 +287,6 @@
   color: #253229;
 }
 
-/* קונטקסט שימוש */
 
 .contextSection {
   background: #eb7e3c;
@@ -321,7 +311,6 @@
   flex-direction: column;
 }
 
-/* טקסט מתחת לתמונות קונטקסט */
 .contextText {
   padding: 8px 10px 10px;
   font-family: "TheBasics";
@@ -336,27 +325,27 @@
 
   .heroSection {
     height: 280px;
-    padding: 0 8px;        /* רווח צדדים */
+    padding: 0 8px;        
     box-sizing: border-box;
-    position: relative;    /* חשוב */
+    position: relative;    
   }
 
   .heroBackCard {
     top: 40px;
-    left: 20px;             /* ❗ במקום 0 — עכשיו מכבד את הרווח */
-    width: calc(65% - 8px);/* מפצה על ה-left החדש */
+    left: 20px;            
+    width: calc(65% - 8px);
     height: 240px;
   }
 
   .heroMainCard {
     top: 40px;
-    left: calc(24% + 8px); /* גם כאן מוסיפים את הרווח */
+    left: calc(24% + 8px); 
     width: calc(70% - 8px);
     height: 240px;
   }
 
   .heroDate {
-    left: 20px;            /* נכנס למיקום יפה */
+    left: 20px;            
   }
 }
 
